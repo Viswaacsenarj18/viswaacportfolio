@@ -330,59 +330,63 @@ footer { text-align: center; padding: 20px; background: #111827; font-size: 0.9r
   height: 100%;
   z-index: -1; /* behind all content */
 }
-/* Contact box */
-.contact-box {
+#contact {
   max-width: 600px;
   margin: 50px auto;
   padding: 30px;
-  border: 3px solid transparent;
   border-radius: 15px;
   text-align: center;
   position: relative;
-  background: transparent;
-  overflow: hidden;
+  background: transparent; /* keep transparent */
+  overflow: visible; /* important fix */
+  z-index: 1;
 }
 
-/* Animated border effect */
-.contact-box::before {
+/* Animated glowing border effect */
+#contact::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: 15px;
-  padding: 3px; /* border thickness */
+  padding: 3px;
   background: linear-gradient(90deg, #00ffbf, transparent, #00ffbf);
   background-size: 300% 300%;
   animation: borderTrain 6s linear infinite;
-
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  
+  /* Mask only the border area */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                 linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
 
-  pointer-events: none; /* ✅ keeps form & icons clickable */
+  z-index: -1; /* keeps it behind the form */
 }
 
-/* Keyframes for moving gradient like a train */
+/* Keyframes for moving gradient border */
 @keyframes borderTrain {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .contact-box {
+  #contact {
     max-width: 90%;
     padding: 20px;
   }
 }
 @media (max-width: 480px) {
-  .contact-box {
+  #contact {
     max-width: 95%;
     padding: 15px;
   }
 }
+
+
 
 
 
