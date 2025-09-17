@@ -330,3 +330,66 @@ footer { text-align: center; padding: 20px; background: #111827; font-size: 0.9r
   height: 100%;
   z-index: -1; /* behind all content */
 }
+#contact {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  background: transparent; /* no white background */
+  overflow: hidden;
+}
+
+/* Animated border effect */
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 3px; /* border thickness */
+  background: linear-gradient(
+    90deg,
+    #00ffbf,
+    transparent,
+    #00ffbf
+  );
+  background-size: 300% 300%;
+  animation: borderTrain 6s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+/* Keyframes for moving gradient like a train */
+@keyframes borderTrain {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #contact {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact {
+    max-width: 95%;
+    padding: 15px;
+  }
+}
+
+
