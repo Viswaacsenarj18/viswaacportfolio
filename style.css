@@ -570,3 +570,22 @@ footer { text-align: center; padding: 20px; background: #111827; font-size: 0.9r
     padding-right: 15px !important;
   }
 }
+/* Fix Achievement Text Alignment on Mobile */
+@media (max-width: 600px) {
+
+  .ach-item {
+    text-align: center !important;   
+    padding: 10px 5px;
+  }
+
+  .ach-item p {
+    text-align: center !important;
+    font-size: 0.95rem;
+    padding: 0 10px;
+    line-height: 1.6;
+  }
+
+  .achievement-gallery {
+    grid-template-columns: 1fr !important;  /* One card per row */
+  }
+}
