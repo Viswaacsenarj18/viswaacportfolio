@@ -546,3 +546,27 @@ footer { text-align: center; padding: 20px; background: #111827; font-size: 0.9r
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* FIX heading + description alignment for all mobile phones */
+@media (max-width: 600px) {
+
+  /* Center Achievements heading */
+  #achievements h1 {
+    text-align: center !important;
+    font-size: 1.8rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Fix description alignment */
+  #achievements .ach-desc {
+    text-align: center !important;
+    padding: 0 18px;
+    line-height: 1.6;
+  }
+
+  /* Fix global section padding on mobile */
+  .content {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
