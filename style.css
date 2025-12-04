@@ -167,7 +167,7 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
     flex-direction: column-reverse;
     text-align: center;
     padding: 50px 5%;
-       margin-top: 40px;
+    margin-top: 60px;
   }
 
   .hero-left {
