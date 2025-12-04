@@ -18,9 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const reveals = document.querySelectorAll(".reveal");
     reveals.forEach(el => {
       const windowHeight = window.innerHeight;
+      const threshold = window.innerWidth <= 768 ? 50 : 100; // Lower threshold on mobile for better triggering
       const revealTop = el.getBoundingClientRect().top;
-      if (revealTop < windowHeight - 100) {
+      if (revealTop < windowHeight - threshold) {
         el.classList.add("active");
+      } else {
+        el.classList.remove("active"); // Allow re-triggering on scroll up/down
       }
     });
   }
@@ -82,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // -------------------------
-  // Particle Background
+  // Particle Background (Optimized for Mobile)
   // -------------------------
   const canvas = document.createElement('canvas');
   canvas.id = 'bgCanvas';
@@ -96,9 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
   resizeCanvas();
   window.addEventListener("resize", resizeCanvas);
 
-  // Particle animation
+  // Particle animation - Reduce particles on mobile for performance
+  const particleCount = window.innerWidth <= 768 ? 30 : 80;
   const particles = [];
-  for (let i = 0; i < 80; i++) {
+  for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -127,42 +131,3 @@ document.addEventListener("DOMContentLoaded", () => {
   animateParticles();
 
 });
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-function createParticles() {
-  for (let i = 0; i < 50; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: 2,
-      speedX: (Math.random() - 0.5) * 1,
-      speedY: (Math.random() - 0.5) * 1,
-    });
-  }
-}
-
-function drawParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach((p) => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = "#00ffbf";
-    ctx.fill();
-
-    p.x += p.speedX;
-    p.y += p.speedY;
-
-    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-  });
-  requestAnimationFrame(drawParticles);
-}
-
-createParticles();
-drawParticles();

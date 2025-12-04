@@ -196,6 +196,34 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  .profile-circle {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 30px 5%;
+  }
+
+  .name {
+    font-size: 35px;
+  }
+
+  .role {
+    font-size: 18px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .profile-circle {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 
@@ -527,6 +555,17 @@ footer {
 /* Reveal Animation */
 .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Mobile Animation Optimizations */
+@media (max-width: 768px) {
+  .reveal { transition: 0.6s ease; } /* Faster transition on mobile */
+  .card::before { animation: cardBorderAnim 8s linear infinite; } /* Slower animation on mobile */
+  .skill-card::before { animation: cardBorderAnim 8s linear infinite; }
+  .about-text-card::before { animation: cardBorderAnim 8s linear infinite; }
+  .contact-box::before { animation: cardBorderAnim 8s linear infinite; }
+  .ach-item::before { animation: cardBorderAnim 8s linear infinite; }
+  .skill-card i { animation: skillAnim 3s infinite; } /* Slower skill animation */
+}
 
 
 
