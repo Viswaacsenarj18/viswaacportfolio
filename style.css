@@ -985,3 +985,14 @@ footer {
     grid-template-columns: 1fr !important;  /* One card per row */
   }
 }
+
+/* Add this after your section styles (around line 170) */
+section {
+  scroll-margin-top: 80px; /* Account for fixed navbar */
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 70px; /* Slightly less on mobile */
+  }
+}
