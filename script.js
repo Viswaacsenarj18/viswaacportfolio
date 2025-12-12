@@ -11,6 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.classList.toggle("open");
   });
 
+  // Close menu when a nav link is clicked
+  const navItems = navLinks.querySelectorAll("a");
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      hamburger.classList.remove("open");
+    });
+  });
+
   // -------------------------
   // Scroll Reveal Animation
   // -------------------------

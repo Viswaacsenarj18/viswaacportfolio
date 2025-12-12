@@ -53,6 +53,10 @@ nav ul { display: flex; gap: 25px; }
 nav ul li a { color: #fff; font-size: 1rem; transition: 0.3s; position: relative; }
 nav ul li a::after { content: ""; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--accent); transition: width 0.3s; }
 nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+/* Mobile: Remove underline on nav links */
+@media (max-width: 768px) {
+  nav ul li a::after { display: none; }
+}
 #hamburger { display: none; font-size: 1.8rem; color: #fff; cursor: pointer; transition: transform 0.3s; }
 #hamburger.open { transform: rotate(90deg); }
 
@@ -1016,8 +1020,8 @@ section {
 }
 
 .coding-card {
-  background: #0a0a0a;
-  border: 2px solid #00ffbf;
+  position: relative;
+  background: rgba(15, 23, 42, 0.6);
   border-radius: 15px;
   text-decoration: none;
   color: white;
@@ -1025,27 +1029,66 @@ section {
   padding: 25px;
   text-align: center;
   transition: 0.3s ease;
+  overflow: hidden;
+}
+
+/* 🔥 Animated Border Frame for Coding Card */
+.coding-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+
+  background: linear-gradient(
+      120deg,
+      #00ffbf,
+      #00eaff,
+      transparent,
+      #00eaff,
+      #00ffbf
+  );
+  background-size: 300% 300%;
+  animation: cardBorderAnim 5s linear infinite;
+
+  /* mask for hollow border */
+  -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+  mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  pointer-events: none;
 }
 
 .coding-card img {
   width: 80px;
   height: auto;
   margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
 }
 
 .coding-card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .coding-card p {
   font-size: 0.95rem;
   opacity: 0.8;
+  position: relative;
+  z-index: 1;
 }
 
 .coding-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0px 0px 15px #00ffbf;
+  box-shadow: 0 8px 25px rgba(0, 255, 191, 0.3);
 }
 
 /* Responsive */
