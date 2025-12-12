@@ -996,3 +996,67 @@ section {
     scroll-margin-top: 70px; /* Slightly less on mobile */
   }
 }
+/* Coding Profiles Section */
+#coding-profiles {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#coding-profiles h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.coding-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.coding-card {
+  background: #0a0a0a;
+  border: 2px solid #00ffbf;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  width: 280px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.coding-card img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.coding-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.coding-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.coding-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 0px 15px #00ffbf;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coding-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .coding-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
