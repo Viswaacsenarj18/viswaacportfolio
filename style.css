@@ -396,23 +396,7 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 /* Gradient fade edges */
 .skills-row::before,
 .skills-row::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 72px;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.skills-row::before {
-  left: 0;
-  background: linear-gradient(90deg, #0a0a0a 0%, rgba(10,10,10,0) 100%);
-}
-
-.skills-row::after {
-  right: 0;
-  background: linear-gradient(270deg, #0a0a0a 0%, rgba(10,10,10,0) 100%);
+  display: none;
 }
 
 /* The moving track */
