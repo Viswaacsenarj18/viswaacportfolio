@@ -139,4 +139,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   animateParticles();
 
+  // -------------------------
+  // Marquee Skills Animation
+  // -------------------------
+  document.querySelectorAll('.skill-chip').forEach(ch => {
+    ch.addEventListener('mouseenter', () => {
+      const marquee = ch.closest('.marquee');
+      if (marquee) marquee.querySelector('.track').style.animationPlayState = 'paused';
+    });
+    ch.addEventListener('mouseleave', () => {
+      const marquee = ch.closest('.marquee');
+      if (marquee) marquee.querySelector('.track').style.animationPlayState = 'running';
+    });
+  });
+
+  // Adjust animation duration based on track width
+  (function adjustDurations(){
+    document.querySelectorAll('.marquee').forEach(m=>{
+      const track = m.querySelector('.track');
+      if(!track) return;
+      const firstHalf = Array.from(track.children).slice(0, track.children.length/2);
+      let total = 0;
+      firstHalf.forEach(item=> total += item.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 16));
+      const pxPerSec = 75;
+      const duration = Math.max(10, Math.round(total / pxPerSec));
+      track.style.animationDuration = (m.classList.contains('fast') ? Math.max(8, duration*0.7) : (m.classList.contains('slow') ? duration*1.3 : duration)) + 's';
+    });
+  })();
+
 });
