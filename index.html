@@ -436,22 +436,89 @@
 
 <!-- Contact -->
 <section id="contact" class="content reveal">
-  <div class="contact-box">
-    <h1>Contact Me</h1>
-    <form action="https://formsubmit.co/viswaacsenarj18@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send</button>
-  </form>
+  <div class="contact-wrapper">
+    <h1 class="contact-title">Get In Touch</h1>
+    <p class="contact-subtitle">I'm always open to discussing new opportunities, collaborations, or just having a chat about technology!</p>
 
+    <div class="contact-grid">
+      <!-- Left: Contact Form -->
+      <div class="contact-form-section">
+        <h2>Send me a message</h2>
+        <form action="https://formsubmit.co/viswaacsenarj18@gmail.com" method="POST" class="contact-form">
+          <div class="form-group">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <i class="fa-solid fa-message"></i>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-send">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
 
-    <div class="social-links">
-      <h3 style="color: #00ffbf;">Follow Me</h3>
-      <a href="https://www.linkedin.com/in/viswaac-senar-5a1b682a2/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://www.instagram.com/tn_viswaac_007/?next=%2F" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://github.com/Viswaacsenarj18" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="mailto:viswaacsenarj18@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+      <!-- Right: Contact Information -->
+      <div class="contact-info-section">
+        <h2>Contact Information</h2>
+        
+        <div class="contact-info-item">
+          <div class="info-icon email-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="info-content">
+            <h3>Email</h3>
+            <a href="mailto:viswaacsenarj18@gmail.com">viswaacsenarj18@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="info-icon phone-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="info-content">
+            <h3>Phone</h3>
+            <p>+91 6383781018</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="info-icon location-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="info-content">
+            <h3>Location</h3>
+            <p>Tamil Nadu, India</p>
+          </div>
+        </div>
+
+        <a href="VISWAACSENAR_RESUME.pdf" download class="btn-download">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+
+        <div class="contact-social">
+          <h3>Connect with me</h3>
+          <div class="social-icons-group">
+            <a href="https://github.com/Viswaacsenarj18" target="_blank" title="GitHub" class="social-icon github-icon">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/viswaac-senar-5a1b682a2/" target="_blank" title="LinkedIn" class="social-icon linkedin-icon">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/tn_viswaac_007/" target="_blank" title="Instagram" class="social-icon instagram-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="mailto:viswaacsenarj18@gmail.com" target="_blank" title="Email" class="social-icon email-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
