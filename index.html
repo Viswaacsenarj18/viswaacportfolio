@@ -447,55 +447,30 @@
     <div class="contact-grid">
 
       <!-- Left: Contact Form -->
-      <div class="contact-form-section">
-        <h2>Send me a message</h2>
+     <form
+  action="https://formsubmit.co/viswaacsenarj18@gmail.com"
+  method="POST"
+  class="contact-form"
+>
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_subject" value="Portfolio Contact Message">
+  <input type="hidden" name="_next" value="https://viswaacsenarj18.github.io/viswaacportfolio/">
 
-        <form
-          action="https://formsubmit.co/viswaacsenarj18@gmail.com"
-          method="POST"
-          class="contact-form"
-        >
-          <!-- REQUIRED FormSubmit settings -->
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="New Portfolio Contact Message">
-          <input type="hidden" name="_next" value="https://viswaacsenarj18.github.io/viswaacportfolio/#contact">
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required>
+  </div>
 
-          <div class="form-group">
-            <i class="fa-solid fa-user"></i>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-            >
-          </div>
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Your Email" required>
+  </div>
 
-          <div class="form-group">
-            <i class="fa-solid fa-envelope"></i>
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            >
-          </div>
+  <div class="form-group">
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  </div>
 
-          <div class="form-group">
-            <i class="fa-solid fa-message"></i>
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="5"
-              required
-            ></textarea>
-          </div>
-
-          <button type="submit" class="btn-send">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
-          </button>
-        </form>
-      </div>
+  <button type="submit">Send Message</button>
+</form>
 
       <!-- Right: Contact Information -->
       <div class="contact-info-section">
