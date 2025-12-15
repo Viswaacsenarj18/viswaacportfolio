@@ -1197,3 +1197,8 @@ section {
     margin: 0 auto;
   }
 }
+#bgCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
