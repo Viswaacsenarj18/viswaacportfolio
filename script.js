@@ -340,4 +340,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })();
 
+  // -------------------------
+  // Certificate Modal Functions
+  // -------------------------
+  window.openModal = function(src) {
+    document.getElementById("certModal").style.display = "flex";
+    document.getElementById("certModalImg").src = src;
+  }
+  
+  window.closeModal = function() {
+    document.getElementById("certModal").style.display = "none";
+  }
+
+  // -------------------------
+  // Mobile Timeline Scroll Animation
+  // -------------------------
+  if (window.innerWidth <= 768) {
+    function animateTimelineOnScroll() {
+      const certBoxes = document.querySelectorAll('.cert-box');
+      const timelineLine = document.querySelector('.timeline-line');
+      
+      certBoxes.forEach((box, index) => {
+        const rect = box.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const threshold = 100;
+        
+        if (rect.top < windowHeight - threshold) {
+          box.style.animation = `slideInMobile 0.6s ease forwards`;
+          box.style.animationDelay = (index * 0.1) + 's';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateTimelineOnScroll);
+    animateTimelineOnScroll();
+  }
+
 });
