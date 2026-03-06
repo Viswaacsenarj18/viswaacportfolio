@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const navItems = navLinks.querySelectorAll("a");
   navItems.forEach(item => {
     item.addEventListener("click", () => {
+      // Remove active class from all links
+      navItems.forEach(link => link.classList.remove("active"));
+      // Add active class to clicked link
+      item.classList.add("active");
+      
       navLinks.classList.remove("show");
       hamburger.classList.remove("open");
     });
