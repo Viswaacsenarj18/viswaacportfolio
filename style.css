@@ -600,6 +600,12 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 .cert-box:nth-child(15) { animation-delay: 1.5s; }
 .cert-box:nth-child(16) { animation-delay: 1.6s; }
 .cert-box:nth-child(17) { animation-delay: 1.7s; }
+.cert-box:nth-child(18) { animation-delay: 1.8s; }
+.cert-box:nth-child(19) { animation-delay: 1.9s; }
+.cert-box:nth-child(20) { animation-delay: 2.0s; }
+.cert-box:nth-child(21) { animation-delay: 2.1s; }
+.cert-box:nth-child(22) { animation-delay: 2.2s; }
+.cert-box:nth-child(23) { animation-delay: 2.3s; }
 
 #certificates .card {
   width: 45%;
@@ -814,6 +820,12 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
   .cert-box:nth-child(15) { animation-delay: 1.5s; }
   .cert-box:nth-child(16) { animation-delay: 1.6s; }
   .cert-box:nth-child(17) { animation-delay: 1.7s; }
+  .cert-box:nth-child(18) { animation-delay: 1.8s; }
+  .cert-box:nth-child(19) { animation-delay: 1.9s; }
+  .cert-box:nth-child(20) { animation-delay: 2.0s; }
+  .cert-box:nth-child(21) { animation-delay: 2.1s; }
+  .cert-box:nth-child(22) { animation-delay: 2.2s; }
+  .cert-box:nth-child(23) { animation-delay: 2.3s; }
 
   #certificates .card {
     width: 100%;
