@@ -606,6 +606,8 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 .cert-box:nth-child(21) { animation-delay: 2.1s; }
 .cert-box:nth-child(22) { animation-delay: 2.2s; }
 .cert-box:nth-child(23) { animation-delay: 2.3s; }
+.cert-box:nth-child(24) { animation-delay: 2.4s; }
+
 
 #certificates .card {
   width: 45%;
@@ -826,6 +828,8 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
   .cert-box:nth-child(21) { animation-delay: 2.1s; }
   .cert-box:nth-child(22) { animation-delay: 2.2s; }
   .cert-box:nth-child(23) { animation-delay: 2.3s; }
+  .cert-box:nth-child(24) { animation-delay: 2.4s; }
+
 
   #certificates .card {
     width: 100%;
